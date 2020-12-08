@@ -36,6 +36,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var buttonGeforceNowBeta:       UIImageView!
     @IBOutlet weak var buttonStadia:               UIImageView!
     @IBOutlet weak var buttonLuna:                 UIImageView!
+    @IBOutlet weak var buttonParsec:               UIImageView!
     @IBOutlet weak var buttonBoosteroid:           UIImageView!
     @IBOutlet weak var buttonGamepadTester:        UIImageView!
     @IBOutlet weak var buttonPatreon:              UIImageView!
@@ -79,6 +80,9 @@ class MenuViewController: UIViewController {
         // tap for luna button
         let tapLuna = UITapGestureRecognizer(target: self, action: #selector(onLunaButtonPressed))
         buttonLuna.addGestureRecognizer(tapLuna)
+        // tap for parsec button
+        let tapParsec = UITapGestureRecognizer(target: self, action: #selector(onParsecButtonPressed))
+        buttonParsec.addGestureRecognizer(tapParsec)
         // tap for gamepad tester button
         let tapGamepadTester = UITapGestureRecognizer(target: self, action: #selector(onGamepadTesterButtonPressed))
         buttonGamepadTester.addGestureRecognizer(tapGamepadTester)
@@ -218,6 +222,12 @@ extension MenuViewController {
     /// Handle luna shortcut
     @objc func onLunaButtonPressed(_ sender: Any) {
         webController?.navigateTo(address: Navigator.Config.Url.amazonLuna.absoluteString)
+        hideMenu()
+    }
+    
+    /// Handle parsec shortcut
+    @objc func onParsecButtonPressed(_ sender: Any) {
+        webController?.navigateTo(address: Navigator.Config.Url.parsec.absoluteString)
         hideMenu()
     }
 

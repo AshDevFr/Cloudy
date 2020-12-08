@@ -46,4 +46,6 @@ struct Scripts {
                                                 return [emulatedGamepad, null, null, null];
                                             };
                                             """ }
+    
+    static let chromeVendorOverride    = "Object.defineProperty(navigator, 'vendor', {get:function(){return 'Chrome Inc';}});"
 }
